@@ -1,5 +1,5 @@
 void main(){
-  final Hero wolverine = new Hero("wolverine", "garra metal");
+  final Hero wolverine = new Hero(name: "wolverine");
 
   print(wolverine);
   print(wolverine.name);
@@ -7,11 +7,13 @@ void main(){
 }
 
 class Hero {
-  String name = "";
-  String power = "";
+  String name;
+  String power;
 
-  Hero(String name, String power){
-    this.name = name;
-    this.power = power;
+  Hero({required String this.name, String this.power = "Sin poder"});
+
+  @override
+  String toString() {
+    return "$name - $power";
   }
 }
